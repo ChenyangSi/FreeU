@@ -1,0 +1,80 @@
+/* The grid: Four equal columns that floats next to each other */
+.tab_column {
+    /* float: right; */
+    text-align: center;
+    flex: 1;
+    width: 5%;
+    padding: 5px;
+  }
+  
+/* Style the images inside the grid */
+.tab_column img {
+opacity: 0.8;
+cursor: pointer;
+}
+
+.tab_column img:hover {
+opacity: 1;
+}
+
+.tab_row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Clear floats after the columns */
+/* .tab_row:after {
+content: "";
+display: table;
+clear: both;
+} */
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.tab_container {
+position: relative;
+display: block;
+/* justify-content: center; */
+}
+
+/* Expanding image text */
+#imgtext {
+position: absolute;
+bottom: 15px;
+left: 15px;
+color: white;
+font-size: 20px;
+}
+
+/* Closable button inside the image */
+.tab_closebtn {
+position: absolute;
+top: 10px;
+right: 15px;
+color: white;
+font-size: 35px;
+cursor: pointer;
+}
+
+ 
+#juxtapose-embed {
+    width: 100%;
+    max-width: initial;
+}
+
+#juxtapose-embed {
+    width: 100%;
+    max-width: initial;
+}
+
+#juxtapose-hidden {
+    display: none;
+}
+
+#controls {
+    text-align: center;
+    margin-top: 20px;
+}

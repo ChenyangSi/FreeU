@@ -1,0 +1,38 @@
+.d-flex {
+    display: flex;
+  }
+  
+.justify-content-center {
+justify-content: center;
+}
+
+.card-container {
+    /* position: relative; */
+    margin: auto;
+    width: 1000px;
+  }
+
+
+.card-front{
+    text-align: center;
+    width: 360px;
+    height: 360px;
+}
+
+.card-back{
+    width: 360px;
+    height: 360px;
+    display: none;
+}
+  
+  /* .slide {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    left: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .slide:first-child {
+    left: 0;
+  } */
