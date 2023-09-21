@@ -15,6 +15,8 @@
 [Paper](https://arxiv.org/pdf/2309.11497.pdf) | [Project Page](https://chenyangsi.top/FreeU/) | [Video](https://www.youtube.com/watch?v=-CZ5uWxvX30&t=2s)
 </br>
 
+<strong> We will release the code this week. </strong>
+
 <strong>We propose FreeU, a method that substantially improves diffusion model sample quality at no costs: no training, no additional parameter introduced, and no increase in memory or sampling time.</strong>
 
 <div style="width: 100%; text-align: center; margin:auto;">
