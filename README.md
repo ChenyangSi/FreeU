@@ -97,7 +97,7 @@ class Free_UNetModel(UNetModel):
         for module in self.output_blocks:
             hs_ = hs.pop()
 
-            # --------------- FreeU operation code -----------------------
+            # --------------- FreeU code -----------------------
             # Only operate on the first two stages
             if h.shape[1] == 1280:
                 h[:,:640] = h[:,:640] * self.b1
