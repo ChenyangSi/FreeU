@@ -26,7 +26,7 @@
 </div>
 
 
-## FreeU
+## FreeU Code
 ```python
 def Fourier_filter(x, threshold, scale):
     # FFT
