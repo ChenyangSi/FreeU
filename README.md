@@ -101,10 +101,10 @@ class Free_UNetModel(UNetModel):
             # Only operate on the first two stages
             if h.shape[1] == 1280:
                 h[:,:640] = h[:,:640] * self.b1
-                hs_ = highenhance_filter(hs_, threshold=1, scale=self.s1)
+                hs_ = Fourier_filter(hs_, threshold=1, scale=self.s1)
             if h.shape[1] == 640:
                 h[:,:320] = h[:,:320] * self.b2
-                hs_ = highenhance_filter(hs_, threshold=1, scale=self.s2)
+                hs_ = Fourier_filter(hs_, threshold=1, scale=self.s2)
             # ---------------------------------------------------------
 
             h = th.cat([h, hs_], dim=1)
