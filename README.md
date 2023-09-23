@@ -144,5 +144,5 @@ If you find FreeU useful for your work please cite:
 ```
 ## :newspaper_roll: License
 
-Distributed under the S-Lab License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
