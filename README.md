@@ -48,9 +48,9 @@ def Fourier_filter(x, threshold, scale):
 
 class Free_UNetModel(UNetModel):
     """
-    :param b1: backbone factor of the firt stage block of decoder.
+    :param b1: backbone factor of the first stage block of decoder.
     :param b2: backbone factor of the second stage block of decoder.
-    :param s1: skip factor of the firt stage block of decoder.
+    :param s1: skip factor of the first stage block of decoder.
     :param s2: skip factor of the second stage block of decoder.
     """
 
