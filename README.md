@@ -118,7 +118,7 @@ class Free_UNetModel(UNetModel):
 
 ## Parameters
 
-Feel free to adjust these parameters based on your models, image/video style, or tasks. Just remember. The following parameters are for reference only.
+Feel free to adjust these parameters based on your models, image/video style, or tasks. The following parameters are for reference only.
 
 ### SD1.4: 
 **b1**: 1.2, **b2**: 1.4, **s1**: 0.9, **s2**: 0.2
