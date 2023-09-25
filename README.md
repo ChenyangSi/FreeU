@@ -137,6 +137,11 @@ When trying additional parameters, consider the following ranges:
 - **s1**: s1 ≤ 1
 - **s2**: s2 ≤ 1
 
+
+# Results from the community
+If you tried FreeU and want to share your results, let me know and we can put up the link here.
+
+- [SDXL](https://wandb.ai/nasirk24/UNET-FreeU-SDXL/reports/FreeU-SDXL-Optimal-Parameters--Vmlldzo1NDg4NTUw?accessToken=6745kr9rjd6e9yjevkr9bpd2lm6dpn6j00428gz5l60jrhl3gj4gubrz4aepupda) from  Nasir Khalid
  
 
 If you find FreeU useful for your work please cite:
