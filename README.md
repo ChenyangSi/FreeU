@@ -126,9 +126,6 @@ Feel free to adjust these parameters based on your models, image/video style, or
 ### SD2.1 
 **b1**: 1.1, **b2**: 1.2, **s1**: 0.9, **s2**: 0.2
 
-### SDXL
-[Parameters](https://wandb.ai/nasirk24/UNET-FreeU-SDXL/reports/FreeU-SDXL-Optimal-Parameters--Vmlldzo1NDg4NTUw?accessToken=6745kr9rjd6e9yjevkr9bpd2lm6dpn6j00428gz5l60jrhl3gj4gubrz4aepupda) from  Nasir Khalid
-
 
 ### Range for More Parameters
 When trying additional parameters, consider the following ranges:
