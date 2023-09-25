@@ -144,13 +144,14 @@ If you tried FreeU and want to share your results, let me know and we can put up
 - [SDXL](https://wandb.ai/nasirk24/UNET-FreeU-SDXL/reports/FreeU-SDXL-Optimal-Parameters--Vmlldzo1NDg4NTUw?accessToken=6745kr9rjd6e9yjevkr9bpd2lm6dpn6j00428gz5l60jrhl3gj4gubrz4aepupda) from  Nasir Khalid
  
 
-If you find FreeU useful for your work please cite:
+
+# BibTeX
 ```
-@article{Si2023FreeU,
-  author    = {Chenyang Si, Ziqi Huang, Yuming Jiang, Ziwei Liu},
-  title     = {FreeU: Free Lunch in Diffusion U-Net},
-  journal   = {arXiv},
-  year      = {2023},
+@article{si2023freeu,
+  title={FreeU: Free Lunch in Diffusion U-Net},
+  author={Si, Chenyang and Huang, Ziqi and Jiang, Yuming and Liu, Ziwei},
+  journal={arXiv preprint arXiv:2309.11497},
+  year={2023}
 }
 ```
 ## :newspaper_roll: License
