@@ -143,6 +143,8 @@ If you tried FreeU and want to share your results, let me know and we can put up
 - [SD2.1](https://twitter.com/justindujardin/status/1706021278963179612) from [Justin DuJardin](https://twitter.com/justindujardin)
 - [SDXL](https://twitter.com/seb_cawai/status/1705948389874000374) from [Sebastian](https://twitter.com/seb_cawai)
 - [SDXL](https://twitter.com/tintwotin/status/1706318393312223346) from [tintwotin](https://twitter.com/tintwotin)
+- [ComfyUI-FreeU](https://www.youtube.com/watch?v=8XJH6uZjNzA&t=297s) (YouTube)
+- [ComfyUI-FreeU](https://www.bilibili.com/video/BV1om4y1G7TX/) (中文)
  
 
 
