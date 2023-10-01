@@ -146,6 +146,7 @@ If you tried FreeU and want to share your results, let me know and we can put up
 - [ComfyUI-FreeU](https://www.youtube.com/watch?v=8XJH6uZjNzA&t=297s) (YouTube)
 - [ComfyUI-FreeU](https://www.bilibili.com/video/BV1om4y1G7TX/) (中文)
 - [Rerender](https://github.com/williamyang1991/Rerender_A_Video#freeu)
+- [Collaborative-Diffusion](https://github.com/ziqihuangg/Collaborative-Diffusion/tree/master/freeu)
  
 
 
