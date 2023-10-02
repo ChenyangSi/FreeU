@@ -26,6 +26,11 @@
 :open_book: For more visual results, go checkout our <a href="https://chenyangsi.top/FreeU/" target="_blank">project page</a>
 </div>
 
+## Usage
+- A demo is also available on the [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU) (huge thanks to [AK](https://twitter.com/_akhaliq) and all the HF team for their support).
+- You can use the gradio demo locally by running [`python demos/app.py`](./demo/app.py).
+
+
 
 ## FreeU Code
 ```python
