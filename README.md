@@ -106,7 +106,7 @@ class Free_UNetModel(UNetModel):
             # --------------- FreeU code -----------------------
             # Only operate on the first two stages
             if h.shape[1] == 1280:
-                hidden_mean = hidden_states.mean(1).unsqueeze(1)
+                hidden_mean = h.mean(1).unsqueeze(1)
                 B = hidden_mean.shape[0]
                 hidden_max, _ = torch.max(hidden_mean.view(B, -1), dim=-1, keepdim=True) 
                 hidden_min, _ = torch.min(hidden_mean.view(B, -1), dim=-1, keepdim=True)
@@ -115,7 +115,7 @@ class Free_UNetModel(UNetModel):
                 h[:,:640] = h[:,:640] * ((self.b1 - 1 ) * hidden_mean + 1)
                 hs_ = Fourier_filter(hs_, threshold=1, scale=self.s1)
             if h.shape[1] == 640:
-                hidden_mean = hidden_states.mean(1).unsqueeze(1)
+                hidden_mean = h.mean(1).unsqueeze(1)
                 B = hidden_mean.shape[0]
                 hidden_max, _ = torch.max(hidden_mean.view(B, -1), dim=-1, keepdim=True) 
                 hidden_min, _ = torch.min(hidden_mean.view(B, -1), dim=-1, keepdim=True)
