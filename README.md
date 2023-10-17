@@ -146,6 +146,7 @@ Feel free to adjust these parameters based on your models, image/video style, or
 
 ### SD2.1 
 ~~**b1**: 1.1, **b2**: 1.2, **s1**: 0.9, **s2**: 0.2~~
+
 **b1**: 1.4, **b2**: 1.6, **s1**: 0.9, **s2**: 0.2
 
 ### SDXL
