@@ -12,7 +12,7 @@
     <sup></sup>S-Lab, Nanyang Technological University
 </div>
 
-[Paper](https://chenyangsi.top/FreeU/FreeU.pdf) | [Project Page](https://chenyangsi.top/FreeU/) | [Video](https://www.youtube.com/watch?v=-CZ5uWxvX30&t=2s) | [Demo](https://huggingface.co/spaces/ChenyangSi/FreeU)
+[Paper](https://arxiv.org/pdf/2309.11497.pdf) | [Project Page](https://chenyangsi.top/FreeU/) | [Video](https://www.youtube.com/watch?v=-CZ5uWxvX30&t=2s) | [Demo](https://huggingface.co/spaces/ChenyangSi/FreeU)
 </br>
 
 [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
