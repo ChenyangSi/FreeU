@@ -1,3 +1,9 @@
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Us)](https://twitter.com/scy994)
+![](https://img.shields.io/github/stars/ChenyangSi/FreeU?style=social)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FChenyangSi%2FFreeU&count_bg=%23E5970E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Github+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhuggingface.co%2Fspaces%2FChenyangSi%2FFreeU&count_bg=%23E5D10E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=HuggingFace+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchenyangsi.top%2FFreeU%2F&count_bg=%239016D2&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Page+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
 <div align="center">
 
 <h1>FreeU: Free Lunch in Diffusion U-Net</h1>
