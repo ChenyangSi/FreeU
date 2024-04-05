@@ -6,7 +6,7 @@
 [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
 <div align="center">
 
-<h1>FreeU: Free Lunch in Diffusion U-Net</h1>
+<h1>FreeU: Free Lunch in Diffusion U-Net ()</h1>
 
 <div>
     <a href="https://chenyangsi.github.io/" target="_blank">Chenyang Si</a><sup></sup>,
@@ -186,11 +186,11 @@ If you tried FreeU and want to share your results, let me know and we can put up
 
 # BibTeX
 ```
-@article{si2023freeu,
+@inproceedings{si2023freeu,
   title={FreeU: Free Lunch in Diffusion U-Net},
   author={Si, Chenyang and Huang, Ziqi and Jiang, Yuming and Liu, Ziwei},
-  journal={arXiv preprint arXiv:2309.11497},
-  year={2023}
+  booktitle={CVPR},
+  year={2024}
 }
 ```
 ## :newspaper_roll: License
