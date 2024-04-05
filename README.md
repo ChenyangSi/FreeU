@@ -19,6 +19,10 @@
 </div>
 
 [Paper](https://arxiv.org/pdf/2309.11497.pdf) | [Project Page](https://chenyangsi.top/FreeU/) | [Video](https://www.youtube.com/watch?v=-CZ5uWxvX30&t=2s) | [Demo](https://huggingface.co/spaces/ChenyangSi/FreeU)
+
+<div>
+    <sup></sup>CVPR2024 Oral
+</div>
 </br>
 
 [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
