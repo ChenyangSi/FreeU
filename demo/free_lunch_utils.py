@@ -1,6 +1,5 @@
 import torch
 import torch.fft as fft
-from diffusers.models.unet_2d_condition import logger
 from diffusers.utils import is_torch_version
 from typing import Any, Dict, List, Optional, Tuple, Union
 
