@@ -22,23 +22,29 @@ Thank you for considering contributing to this project! Please read the followin
 
 # Contributors
 
-| Contributor | Pull Requests |
-|-------------|----------------|
-| [@kushal34712](https://github.com/kushal34712) | [Update README.md](https://github.com/ChenyangSi/FreeU/pull/36) |
-| [@xizhedong](https://github.com/xizhedong) | [Update free_lunch_utils.py](https://github.com/ChenyangSi/FreeU/pull/33) |
-| [@justindujardin](https://github.com/justindujardin) | [fix FFT for non power of 2 images](https://github.com/ChenyangSi/FreeU/pull/11) |
-| [@eltociear](https://github.com/eltociear) | [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10) |
-| [@NasirKhalid24](https://github.com/NasirKhalid24) | [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8) |
-| [@ChenyangSi](https://github.com/ChenyangSi) | [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1) |
+[![kushal34712](https://img.shields.io/badge/kushal34712-blue?style=flat-square)](https://github.com/kushal34712) [Update README.md](https://github.com/ChenyangSi/FreeU/pull/36)
 
+[![xizhedong](https://img.shields.io/badge/xizhedong-blue?style=flat-square)](https://github.com/xizhedong) [Update free_lunch_utils.py](https://github.com/ChenyangSi/FreeU/pull/33)
+
+[![justindujardin](https://img.shields.io/badge/justindujardin-blue?style=flat-square)](https://github.com/justindujardin) [fix FFT for non power of 2 images](https://github.com/ChenyangSi/FreeU/pull/11)
+
+[![eltociear](https://img.shields.io/badge/eltociear-blue?style=flat-square)](https://github.com/eltociear) [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10)
+
+[![NasirKhalid24](https://img.shields.io/badge/NasirKhalid24-blue?style=flat-square)](https://github.com/NasirKhalid24) [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8)
+
+[![ChenyangSi](https://img.shields.io/badge/ChenyangSi-blue?style=flat-square)](https://github.com/ChenyangSi) [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1)
 
 # Contributors
 
-| Contributor | Pull Requests |
-|-------------|----------------|
-| [@kushal34712](https://github.com/kushal34712) | [Update README.md](https://github.com/ChenyangSi/FreeU/pull/36) |
-| [@xizhedong](https://github.com/xizhedong) | [Update free_lunch_utils.py](https://github.com/ChenyangSi/FreeU/pull/33) |
-| [@justindujardin](https://github.com/justindujardin) | [fix FFT for non power of 2 images](https://github.com/ChenyangSi/FreeU/pull/11) |
-| [@eltociear](https://github.com/eltociear) | [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10) |
-| [@NasirKhalid24](https://github.com/NasirKhalid24) | [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8) |
-| [@ChenyangSi](https://github.com/ChenyangSi) | [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1) |
+[![kushal34712](https://img.shields.io/badge/kushal34712-blue?style=flat-square)](https://github.com/kushal34712) [Update README.md](https://github.com/ChenyangSi/FreeU/pull/36)
+
+[![xizhedong](https://img.shields.io/badge/xizhedong-blue?style=flat-square)](https://github.com/xizhedong) [Update free_lunch_utils.py](https://github.com/ChenyangSi/FreeU/pull/33)
+
+[![justindujardin](https://img.shields.io/badge/justindujardin-blue?style=flat-square)](https://github.com/justindujardin) [fix FFT for non power of 2 images](https://github.com/ChenyangSi/FreeU/pull/11)
+
+[![eltociear](https://img.shields.io/badge/eltociear-blue?style=flat-square)](https://github.com/eltociear) [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10)
+
+[![NasirKhalid24](https://img.shields.io/badge/NasirKhalid24-blue?style=flat-square)](https://github.com/NasirKhalid24) [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8)
+
+[![ChenyangSi](https://img.shields.io/badge/ChenyangSi-blue?style=flat-square)](https://github.com/ChenyangSi) [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1)
+
