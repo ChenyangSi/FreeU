@@ -1,39 +1,49 @@
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Us)](https://twitter.com/scy994)
-![](https://img.shields.io/github/stars/ChenyangSi/FreeU?style=social)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FChenyangSi%2FFreeU&count_bg=%23E5970E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Github+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhuggingface.co%2Fspaces%2FChenyangSi%2FFreeU&count_bg=%23E5D10E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=HuggingFace+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchenyangsi.top%2FFreeU%2F&count_bg=%239016D2&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Page+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
-[![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
+
 <div align="center">
 
 <h1>FreeU: Free Lunch in Diffusion U-Net ()</h1>
 
 <div>
-    <a href="https://chenyangsi.github.io/" target="_blank">Chenyang Si</a><sup></sup>,
-    <a href="https://ziqihuangg.github.io/" target="_blank">Ziqi Huang</a><sup></sup>,
-    <a href="https://yumingj.github.io/" target="_blank">Yuming Jiang</a><sup></sup>,
+    <a href="https://chenyangsi.github.io/" target="_blank">Chenyang Si</a><sup></sup> | 
+    <a href="https://ziqihuangg.github.io/" target="_blank">Ziqi Huang</a><sup></sup> | 
+    <a href="https://yumingj.github.io/" target="_blank">Yuming Jiang</a><sup></sup> | 
     <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a><sup></sup>
 </div>
 <div>
     <sup></sup>S-Lab, Nanyang Technological University
 </div>
 
+
+
 [Paper](https://arxiv.org/pdf/2309.11497.pdf) | [Project Page](https://chenyangsi.top/FreeU/) | [Video](https://www.youtube.com/watch?v=-CZ5uWxvX30&t=2s) | [Demo](https://huggingface.co/spaces/ChenyangSi/FreeU)
+
 
 <div>
     <sup></sup>CVPR2024 Oral
 </div>
 </br>
 
+
+<div align="center">
+    
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Us)](https://twitter.com/scy994)
+![](https://img.shields.io/github/stars/ChenyangSi/FreeU?style=social)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FChenyangSi%2FFreeU&count_bg=%23E5970E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Github+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhuggingface.co%2Fspaces%2FChenyangSi%2FFreeU&count_bg=%23E5D10E&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=HuggingFace+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchenyangsi.top%2FFreeU%2F&count_bg=%239016D2&title_bg=%23847878&icon=&icon_color=%23E7E7E7&title=Page+visitors&edge_flat=false)](https://hits.seeyoufarm.com)
 [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-66cdaa)](https://huggingface.co/spaces/ChenyangSi/FreeU)
 
-<strong>We propose FreeU, a method that substantially improves diffusion model sample quality at no costs: no training, no additional parameter introduced, and no increase in memory or sampling time.</strong>
+</div>
+
+---
+
+<strong>We propose FreeU, a method that substantially improves diffusion model sample quality at no cost: no training, no additional parameter introduced, and no increase in memory or sampling time.</strong>
 
 <div style="width: 100%; text-align: center; margin:auto;">
     <img style="width:100%" src="./readme_teaser.jpg">
 </div>
 
-:open_book: For more visual results, go checkout our <a href="https://chenyangsi.top/FreeU/" target="_blank">project page</a>
+:open_book: For more visual results, go checkout our <a href="https://chenyangsi.top/FreeU/" target="_blank">Project Page</a>
 </div>
 
 ## Usage
@@ -146,7 +156,7 @@ class Free_UNetModel(UNetModel):
 
 ## Parameters
 
-Feel free to adjust these parameters based on your models, image/video style, or tasks. The following parameters are for reference only.
+You can adjust these parameters based on your models, image/video style, or tasks. You can look over the following parameters.
 
 ### SD1.4: （will be updated soon）
 **b1**: 1.3, **b2**: 1.4, **s1**: 0.9, **s2**: 0.2
@@ -199,5 +209,5 @@ If you tried FreeU and want to share your results, let me know and we can put up
 ```
 ## :newspaper_roll: License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
