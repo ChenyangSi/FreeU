@@ -37,17 +37,44 @@ def get_contributors_and_prs():
 
     return contributors
 
-def generate_contributors_markdown(contributors):
-    """Append the contributors and their PRs to CONTRIBUTING.md."""
-    with open('CONTRIBUTING.md', 'a') as f:
-        f.write("\n\n# Contributors\n\n")
-        f.write("| Contributor | Pull Requests |\n")
-        f.write("|-------------|----------------|\n")
+def update_contributors_markdown(contributors):
+    """Update the contributors and their PRs in CONTRIBUTING.md."""
+    # Read the existing content of the file
+    with open('CONTRIBUTING.md', 'r') as f:
+        content = f.readlines()
 
+    # Prepare a new content list
+    new_content = []
+    contributors_section_found = False
+
+    for line in content:
+        # Check for the contributors section
+        if line.startswith("# Contributors"):
+            contributors_section_found = True
+            new_content.append(line)  # Add the header
+            new_content.append("\n")  # Add a newline
+            
+            # Add updated contributors
+            for user, prs in contributors.items():
+                pr_links = ', '.join([f"[{pr['title']}]({pr['url']})" for pr in prs])
+                new_content.append(f"[![{user}](https://img.shields.io/badge/{user}-blue?style=flat-square)](https://github.com/{user}) {pr_links}\n\n")
+            continue  # Skip the old contributors section
+
+        # Add lines before contributors section as is
+        if not contributors_section_found:
+            new_content.append(line)  
+       
+    # If the contributors section was not found, append it
+    if not contributors_section_found:
+        new_content.append("\n\n# Contributors\n\n")
         for user, prs in contributors.items():
             pr_links = ', '.join([f"[{pr['title']}]({pr['url']})" for pr in prs])
-            f.write(f"| [@{user}](https://github.com/{user}) | {pr_links} |\n")
+            new_content.append(f"[![{user}](https://img.shields.io/badge/{user}-blue?style=flat-square)](https://github.com/{user}) {pr_links}\n\n")
+    
+    # Write the updated content back to the file
+    with open('CONTRIBUTING.md', 'w') as f:
+        f.writelines(new_content)
 
 if __name__ == "__main__":
     contributors = get_contributors_and_prs()
-    generate_contributors_markdown(contributors)
+    update_contributors_markdown(contributors)
