@@ -28,10 +28,11 @@ def get_contributors_and_prs():
             user = pr['user']['login']
             pr_title = pr['title']
             pr_url = pr['html_url']
+            avatar_url = pr['user']['avatar_url']  # Fetch avatar URL
             
             if user not in contributors:
                 contributors[user] = []
-            contributors[user].append({'title': pr_title, 'url': pr_url})
+            contributors[user].append({'title': pr_title, 'url': pr_url, 'avatar_url': avatar_url})
         
         page += 1  # Increment page for pagination
 
@@ -41,12 +42,12 @@ def generate_contributors_markdown(contributors):
     """Append the contributors and their PRs to CONTRIBUTING.md."""
     with open('CONTRIBUTING.md', 'a') as f:
         f.write("\n\n# Contributors\n\n")
-        f.write("| Contributor | Pull Requests |\n")
-        f.write("|-------------|----------------|\n")
 
         for user, prs in contributors.items():
+            # Create a badge with the contributor's avatar and link to their profile
+            avatar_url = prs[0]['avatar_url']  # Use the avatar from the first PR
             pr_links = ', '.join([f"[{pr['title']}]({pr['url']})" for pr in prs])
-            f.write(f"| [@{user}](https://github.com/{user}) | {pr_links} |\n")
+            f.write(f"![{user}'s avatar]({avatar_url}) [@{user}](https://github.com/{user}) - {pr_links}\n\n")
 
 if __name__ == "__main__":
     contributors = get_contributors_and_prs()
