@@ -156,31 +156,35 @@ class Free_UNetModel(UNetModel):
 
 ## Parameters
 
-You can adjust these parameters based on your models, image/video style, or tasks. You can look over the following parameters.
+You can adjust these parameters based on your models, image/video style, or tasks. Fine-tuning them within the suggested ranges allows for optimized results. The following parameters are for various model versions:
 
-### SD1.4: （will be updated soon）
-**b1**: 1.3, **b2**: 1.4, **s1**: 0.9, **s2**: 0.2
+### Parameters Table
 
-### SD1.5: (will be updated soon）
-**b1**: 1.5, **b2**: 1.6, **s1**: 0.9, **s2**: 0.2
+| **Model Version** | **b1** | **b2** | **s1** | **s2** |
+|-------------------|--------|--------|--------|--------|
+| SD1.4 (will be updated soon)  | 1.3    | 1.4    | 0.9    | 0.2    |
+| SD1.5 (will be updated soon)  | 1.5    | 1.6    | 0.9    | 0.2    |
+| ~~SD2.1 (Old)~~               | ~~1.1~~ | ~~1.2~~ | ~~0.9~~ | ~~0.2~~ |
+| SD2.1 (Updated)               | 1.4    | 1.6    | 0.9    | 0.2    |
+| SDXL                          | 1.3    | 1.4    | 0.9    | 0.2    |
 
-### SD2.1 
-~~**b1**: 1.1, **b2**: 1.2, **s1**: 0.9, **s2**: 0.2~~
+### SDXL Results
 
-**b1**: 1.4, **b2**: 1.6, **s1**: 0.9, **s2**: 0.2
+For more details on SDXL performance, refer to the [SDXL results](https://www.youtube.com/watch?v=jTcGZKkifsA&t=1s).
 
-### SDXL
-**b1**: 1.3, **b2**: 1.4, **s1**: 0.9, **s2**: 0.2
-[SDXL results](https://www.youtube.com/watch?v=jTcGZKkifsA&t=1s)
-
-
+---
 
 ### Range for More Parameters
-When trying additional parameters, consider the following ranges:
-- **b1**: 1 ≤ b1 ≤ 1.2
-- **b2**: 1.2 ≤ b2 ≤ 1.6
-- **s1**: s1 ≤ 1
-- **s2**: s2 ≤ 1
+
+When adjusting additional parameters, please consider the following recommended ranges:
+
+| **Parameter** | **Range**        |
+|---------------|------------------|
+| **b1**        | 1 ≤ b1 ≤ 1.2     |
+| **b2**        | 1.2 ≤ b2 ≤ 1.6   |
+| **s1**        | s1 ≤ 1           |
+| **s2**        | s2 ≤ 1           |
+
 
 
 # Results from the community
