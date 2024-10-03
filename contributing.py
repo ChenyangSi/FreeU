@@ -1,10 +1,12 @@
 import requests
+import os
 
 REPO_OWNER = "ChenyangSi"
 REPO_NAME = "FreeU"
 
-# GitHub API endpoint for pull requests
+# GitHub API endpoint for pull requests and users
 API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/pulls"
+USER_API_URL = "https://api.github.com/users/{username}"
 
 # Headers to handle GitHub rate limits (if necessary, add your personal access token)
 HEADERS = {
@@ -12,6 +14,12 @@ HEADERS = {
     # Uncomment the following line if you're using a personal access token
     # 'Authorization': 'token YOUR_GITHUB_TOKEN',
 }
+
+def get_user_profile(username):
+    """Fetch GitHub user profile information including name and avatar URL."""
+    user_response = requests.get(USER_API_URL.format(username=username), headers=HEADERS)
+    user_data = user_response.json()
+    return user_data.get('name', username), user_data.get('avatar_url')
 
 def get_contributors_and_prs():
     """Fetch all closed pull requests from the repository."""
@@ -30,51 +38,46 @@ def get_contributors_and_prs():
             pr_url = pr['html_url']
             
             if user not in contributors:
-                contributors[user] = []
-            contributors[user].append({'title': pr_title, 'url': pr_url})
+                # Fetch user's full name and avatar
+                full_name, avatar_url = get_user_profile(user)
+                contributors[user] = {'name': full_name, 'avatar_url': avatar_url, 'prs': []}
+                
+            contributors[user]['prs'].append({'title': pr_title, 'url': pr_url})
         
         page += 1  # Increment page for pagination
 
     return contributors
 
-def update_contributors_markdown(contributors):
-    """Update the contributors and their PRs in CONTRIBUTING.md."""
-    # Read the existing content of the file
-    with open('CONTRIBUTING.md', 'r') as f:
-        content = f.readlines()
-
-    # Prepare a new content list
-    new_content = []
-    contributors_section_found = False
-
-    for line in content:
-        # Check for the contributors section
-        if line.startswith("# Contributors"):
-            contributors_section_found = True
-            new_content.append(line)  # Add the header
-            new_content.append("\n")  # Add a newline
-            
-            # Add updated contributors
-            for user, prs in contributors.items():
-                pr_links = ', '.join([f"[{pr['title']}]({pr['url']})" for pr in prs])
-                new_content.append(f"[![{user}](https://img.shields.io/badge/{user}-blue?style=flat-square)](https://github.com/{user}) {pr_links}\n\n")
-            continue  # Skip the old contributors section
-
-        # Add lines before contributors section as is
-        if not contributors_section_found:
-            new_content.append(line)  
-       
-    # If the contributors section was not found, append it
-    if not contributors_section_found:
-        new_content.append("\n\n# Contributors\n\n")
-        for user, prs in contributors.items():
-            pr_links = ', '.join([f"[{pr['title']}]({pr['url']})" for pr in prs])
-            new_content.append(f"[![{user}](https://img.shields.io/badge/{user}-blue?style=flat-square)](https://github.com/{user}) {pr_links}\n\n")
+def generate_contributors_markdown(contributors):
+    """Append the contributors and their PRs to CONTRIBUTING.md, avoid re-adding existing contributors."""
+    # Load current CONTRIBUTING.md to avoid duplicate data
+    if os.path.exists('CONTRIBUTING.md'):
+        with open('CONTRIBUTING.md', 'r') as f:
+            existing_content = f.read()
+    else:
+        existing_content = ""
     
-    # Write the updated content back to the file
-    with open('CONTRIBUTING.md', 'w') as f:
-        f.writelines(new_content)
+    with open('CONTRIBUTING.md', 'a') as f:
+        if "# Contributors" not in existing_content:
+            f.write("\n\n# Contributors\n\n")
+        
+        for user, data in contributors.items():
+            # Skip contributors who are already in the file
+            if f"[@{user}]" in existing_content:
+                continue
+            
+            # Write contributor's profile pic, name, and PR count
+            f.write(f"<img src='{data['avatar_url']}' width='80' height='80' align='left'>\n")
+            f.write(f"**[{data['name']}](https://github.com/{user})**\n\n")
+            f.write(f"- **Pull Requests**: {len(data['prs'])}\n")
+            
+            # Add collapsible dropdown for the PR titles
+            f.write(f"<details>\n  <summary>View Pull Requests</summary>\n  <ul>\n")
+            for pr in data['prs']:
+                f.write(f"    <li><a href='{pr['url']}'>{pr['title']}</a></li>\n")
+            f.write("  </ul>\n</details>\n\n")
+            f.write("<br clear='all'/>\n\n")  # To clear floating image
 
 if __name__ == "__main__":
     contributors = get_contributors_and_prs()
-    update_contributors_markdown(contributors)
+    generate_contributors_markdown(contributors)
