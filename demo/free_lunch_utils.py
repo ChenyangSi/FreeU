@@ -20,37 +20,46 @@ def isinstance_str(x: object, cls_name: str):
 
 
 def Fourier_filter(x, threshold, scale):
+    # Convert input tensor to float32 for processing
     dtype = x.dtype
     x = x.type(torch.float32)
-    # FFT
+    
+    # Compute the FFT of the input tensor
     x_freq = fft.fftn(x, dim=(-2, -1))
     x_freq = fft.fftshift(x_freq, dim=(-2, -1))
     
     B, C, H, W = x_freq.shape
+    # Create a mask for filtering in the frequency domain
     mask = torch.ones((B, C, H, W)).cuda() 
 
+    # Define center coordinates for the mask
     crow, ccol = H // 2, W //2
+    # Apply scale to the central region defined by threshold
     mask[..., crow - threshold:crow + threshold, ccol - threshold:ccol + threshold] = scale
     x_freq = x_freq * mask
 
-    # IFFT
+    # Compute the inverse FFT to return to the spatial domain
     x_freq = fft.ifftshift(x_freq, dim=(-2, -1))
     x_filtered = fft.ifftn(x_freq, dim=(-2, -1)).real
-    
+
+    # Cast back to original data type
     x_filtered = x_filtered.type(dtype)
     return x_filtered
 
 
 def register_upblock2d(model):
+    # Register a custom forward pass for UpBlock2D layers
     def up_forward(self):
         def forward(hidden_states, res_hidden_states_tuple, temb=None, upsample_size=None):
             for resnet in self.resnets:
-                # pop res hidden states
+                # Pop residual hidden states from the tuple
                 res_hidden_states = res_hidden_states_tuple[-1]
                 res_hidden_states_tuple = res_hidden_states_tuple[:-1]
                 #print(f"in upblock2d, hidden states shape: {hidden_states.shape}")
+                # Concatenate hidden states and residuals
                 hidden_states = torch.cat([hidden_states, res_hidden_states], dim=1)
 
+                # Handle gradient checkpointing for memory efficiency during training
                 if self.training and self.gradient_checkpointing:
 
                     def create_custom_forward(module):
@@ -122,7 +131,7 @@ def register_free_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
                         )
                 else:
                     hidden_states = resnet(hidden_states, temb)
-
+            # Apply upsampling if defined
             if self.upsamplers is not None:
                 for upsampler in self.upsamplers:
                     hidden_states = upsampler(hidden_states, upsample_size)
@@ -130,7 +139,7 @@ def register_free_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
             return hidden_states
         
         return forward
-    
+    # Iterate through upsampling blocks and register the new forward function
     for i, upsample_block in enumerate(model.unet.up_blocks):
         if isinstance_str(upsample_block, "UpBlock2D"):
             upsample_block.forward = up_forward(upsample_block)
@@ -141,6 +150,7 @@ def register_free_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
 
 
 def register_crossattn_upblock2d(model):
+    # Register a custom forward pass with FreeU modifications for CrossAttnUpBlock2D layers
     def up_forward(self):
         def forward(
             hidden_states: torch.FloatTensor,
@@ -158,7 +168,8 @@ def register_crossattn_upblock2d(model):
                 res_hidden_states = res_hidden_states_tuple[-1]
                 res_hidden_states_tuple = res_hidden_states_tuple[:-1]
                 hidden_states = torch.cat([hidden_states, res_hidden_states], dim=1)
-
+                
+                # Handle gradient checkpointing for memory efficiency during training
                 if self.training and self.gradient_checkpointing:
 
                     def create_custom_forward(module, return_dict=None):
@@ -198,7 +209,8 @@ def register_crossattn_upblock2d(model):
                         encoder_attention_mask=encoder_attention_mask,
                         return_dict=False,
                     )[0]
-
+                    
+            # Apply upsampling if defined
             if self.upsamplers is not None:
                 for upsampler in self.upsamplers:
                     hidden_states = upsampler(hidden_states, upsample_size)
@@ -206,13 +218,15 @@ def register_crossattn_upblock2d(model):
             return hidden_states
         
         return forward
-    
+        
+    # Iterate through upsampling blocks and register the new forward function
     for i, upsample_block in enumerate(model.unet.up_blocks):
         if isinstance_str(upsample_block, "CrossAttnUpBlock2D"):
             upsample_block.forward = up_forward(upsample_block)
 
 
 def register_free_crossattn_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
+    # Register a custom forward pass with FreeU modifications for CrossAttnUpBlock2D layers
     def up_forward(self):
         def forward(
             hidden_states: torch.FloatTensor,
@@ -241,7 +255,7 @@ def register_free_crossattn_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
                 # ---------------------------------------------------------
 
                 hidden_states = torch.cat([hidden_states, res_hidden_states], dim=1)
-
+                # Handle gradient checkpointing for memory efficiency during training
                 if self.training and self.gradient_checkpointing:
 
                     def create_custom_forward(module, return_dict=None):
@@ -285,7 +299,8 @@ def register_free_crossattn_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
                         encoder_hidden_states=encoder_hidden_states,
                         cross_attention_kwargs=cross_attention_kwargs,
                     )[0]
-
+                    
+            # Apply upsampling if defined
             if self.upsamplers is not None:
                 for upsampler in self.upsamplers:
                     hidden_states = upsampler(hidden_states, upsample_size)
@@ -293,7 +308,8 @@ def register_free_crossattn_upblock2d(model, b1=1.2, b2=1.4, s1=0.9, s2=0.2):
             return hidden_states
         
         return forward
-    
+
+    # Iterate through upsampling blocks and register the new forward function with FreeU parameters
     for i, upsample_block in enumerate(model.unet.up_blocks):
         if isinstance_str(upsample_block, "CrossAttnUpBlock2D"):
             upsample_block.forward = up_forward(upsample_block)
