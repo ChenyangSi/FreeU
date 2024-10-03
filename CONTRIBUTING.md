@@ -42,3 +42,19 @@ Thank you for considering contributing to this project! Please read the followin
 | [@eltociear](https://github.com/eltociear) | [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10) |
 | [@NasirKhalid24](https://github.com/NasirKhalid24) | [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8) |
 | [@ChenyangSi](https://github.com/ChenyangSi) | [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1) |
+
+
+# Contributors
+
+![kushal34712's avatar](https://avatars.githubusercontent.com/u/98145879?v=4) [@kushal34712](https://github.com/kushal34712) - [Update README.md](https://github.com/ChenyangSi/FreeU/pull/36)
+
+![xizhedong's avatar](https://avatars.githubusercontent.com/u/69316039?v=4) [@xizhedong](https://github.com/xizhedong) - [Update free_lunch_utils.py](https://github.com/ChenyangSi/FreeU/pull/33)
+
+![justindujardin's avatar](https://avatars.githubusercontent.com/u/101493?v=4) [@justindujardin](https://github.com/justindujardin) - [fix FFT for non power of 2 images](https://github.com/ChenyangSi/FreeU/pull/11)
+
+![eltociear's avatar](https://avatars.githubusercontent.com/u/22633385?v=4) [@eltociear](https://github.com/eltociear) - [Fix typo in README.md](https://github.com/ChenyangSi/FreeU/pull/10)
+
+![NasirKhalid24's avatar](https://avatars.githubusercontent.com/u/29706203?v=4) [@NasirKhalid24](https://github.com/NasirKhalid24) - [adding optimal parameters for sdxl](https://github.com/ChenyangSi/FreeU/pull/8)
+
+![ChenyangSi's avatar](https://avatars.githubusercontent.com/u/29878243?v=4) [@ChenyangSi](https://github.com/ChenyangSi) - [Add files via upload](https://github.com/ChenyangSi/FreeU/pull/1)
+
