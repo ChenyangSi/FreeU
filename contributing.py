@@ -19,7 +19,12 @@ def get_user_profile(username):
     """Fetch GitHub user profile information including name and avatar URL."""
     user_response = requests.get(USER_API_URL.format(username=username), headers=HEADERS)
     user_data = user_response.json()
-    return user_data.get('name', username), user_data.get('avatar_url')
+    
+    # Fallback to username if the full name is missing (None)
+    full_name = user_data.get('name') if user_data.get('name') else username
+    avatar_url = user_data.get('avatar_url')
+    
+    return full_name, avatar_url
 
 def get_contributors_and_prs():
     """Fetch all closed pull requests from the repository."""
@@ -66,9 +71,9 @@ def generate_contributors_markdown(contributors):
             if f"[@{user}]" in existing_content:
                 continue
             
-            # Write contributor's profile pic, name, and PR count
+            # Embed profile link into the name (or username if name is missing)
             f.write(f"<img src='{data['avatar_url']}' width='80' height='80' align='left'>\n")
-            f.write(f"**[{data['name']}](https://github.com/{user})**\n\n")
+            f.write(f"**[{data['name']}](https://github.com/{user})**\n\n")  # Embed name with profile link
             f.write(f"- **Pull Requests**: {len(data['prs'])}\n")
             
             # Add collapsible dropdown for the PR titles
