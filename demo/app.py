@@ -6,12 +6,13 @@ from diffusers import StableDiffusionPipeline
 from free_lunch_utils import register_free_upblock2d, register_free_crossattn_upblock2d
 
 
-
+# Load the Stable Diffusion model
 model_id = "stabilityai/stable-diffusion-2-1"
 # model_id = "./stable-diffusion-2-1"
 pip_2_1 = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 pip_2_1 = pip_2_1.to("cuda")
 
+# Variables to keep track of previous states
 prompt_prev = None
 sd_options_prev = None
 seed_prev = None 
@@ -29,10 +30,12 @@ def infer(prompt, sd_options, seed, b1, b2, s1, s2):
     #     pip = pip_2_1
     # else:
     #     pip = pip_1_4
-
+    
+    # Choose the correct pipeline based on options (currently only SD2.1)
     pip = pip_2_1
 
     run_baseline = False
+    # Check if any input parameters have changed to determine if a new generation is needed
     if prompt != prompt_prev or sd_options != sd_options_prev or seed != seed_prev:
         run_baseline = True
         prompt_prev = prompt
@@ -40,30 +43,34 @@ def infer(prompt, sd_options, seed, b1, b2, s1, s2):
         seed_prev = seed
 
     if run_baseline:
+        # Register parameters for the pipeline
         register_free_upblock2d(pip, b1=1.0, b2=1.0, s1=1.0, s2=1.0)
         register_free_crossattn_upblock2d(pip, b1=1.0, b2=1.0, s1=1.0, s2=1.0)
-       
+        
+        # Set the seed for reproducibility and generate the first image
         torch.manual_seed(seed)
         print("Generating SD:")
         sd_image = pip(prompt, num_inference_steps=25).images[0]  
         sd_image_prev = sd_image
     else:
+        # If no change in input, reuse the previous image
         sd_image = sd_image_prev
 
-    
+    # Register the user-defined parameters for the second image generation
     register_free_upblock2d(pip, b1=b1, b2=b2, s1=s1, s2=s1)
     register_free_crossattn_upblock2d(pip, b1=b1, b2=b2, s1=s1, s2=s1)
 
+    # Set the seed again and generate the second image
     torch.manual_seed(seed)
     print("Generating FreeU:")
     freeu_image = pip(prompt, num_inference_steps=25).images[0]  
-
+    # Return both images for display
     # First SD, then freeu
     images = [sd_image, freeu_image]
 
     return images
 
-
+# Example prompts for testing the model
 examples = [
     [
         "A drone  view of celebration with Christma tree and fireworks, starry sky - background.",
@@ -116,6 +123,7 @@ examples = [
     [
         "a drone flying over a snowy forest."
     ],
+    # Add more examples...
 ]
     
     
@@ -129,7 +137,7 @@ h1 {
   margin: auto;
 }
 """
-
+# Create a Gradio interface for the model
 block = gr.Blocks(css='style.css')
 
 options = ['SD2.1']
@@ -207,5 +215,6 @@ with block:
     text.submit(infer, inputs=[text, sd_options, seed, b1, b2, s1, s2], outputs=[image_1, image_2])
     btn.click(infer, inputs=[text, sd_options, seed, b1, b2, s1, s2], outputs=[image_1, image_2])
 
+# Launch the Gradio interface
 block.launch()
 # block.queue(default_enabled=False).launch(share=False)
