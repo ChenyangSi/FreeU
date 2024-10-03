@@ -73,8 +73,8 @@ def generate_contributors_markdown(contributors):
             
             # Embed profile link into the name (or username if name is missing)
             f.write(f"<img src='{data['avatar_url']}' width='80' height='80' align='left'>\n")
-              f.write(f"**[{data['name']}](https://github.com/{user})**\n\n")  # Embed name with profile link
-              f.write(f"- **Pull Requests**: {len(data['prs'])}\n")
+            f.write(f"**[{data['name']}](https://github.com/{user})**\n\n")  # Embed name with profile link
+            f.write(f"- **Pull Requests**: {len(data['prs'])}\n")
             
             # Add collapsible dropdown for the PR titles
             f.write(f"<details>\n  <summary>View Pull Requests</summary>\n  <ul>\n")
