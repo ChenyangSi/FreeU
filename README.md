@@ -154,9 +154,11 @@ class Free_UNetModel(UNetModel):
             return self.out(h)
 ```
 
-## Parameters
+## Parameter Adjustments
 
-You can adjust these parameters based on your models, image/video style, or tasks. You can look over the following parameters.
+You can fine-tune these parameters to suit your models, whether you're working on images, videos, or specific tasks.Below is a breakdown of the key parameters for each version:
+
+
 
 ### SD1.4: （will be updated soon）
 **b1**: 1.3, **b2**: 1.4, **s1**: 0.9, **s2**: 0.2
@@ -184,7 +186,7 @@ When trying additional parameters, consider the following ranges:
 
 
 # Results from the community
-If you tried FreeU and want to share your results, let me know and we can put up the link here.
+If you've experimented with FreeU and would like to share your results, feel free to reach out! We’d be happy to feature your work and include a link here.
 
 - [SDXL](https://wandb.ai/nasirk24/UNET-FreeU-SDXL/reports/FreeU-SDXL-Optimal-Parameters--Vmlldzo1NDg4NTUw?accessToken=6745kr9rjd6e9yjevkr9bpd2lm6dpn6j00428gz5l60jrhl3gj4gubrz4aepupda) from  [Nasir Khalid](https://wandb.ai/nasirk24)
 - [comfyUI](https://twitter.com/bramvera/status/1706190498220884007) from [Abraham](https://twitter.com/bramvera)
