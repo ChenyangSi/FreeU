@@ -1,4 +1,4 @@
-
+<a name="readme-top"></a>
 <div align="center">
 
 <h1>FreeU: Free Lunch in Diffusion U-Net ()</h1>
@@ -211,3 +211,18 @@ If you tried FreeU and want to share your results, let me know and we can put up
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
+# Contributors
+
+<a href="https://github.com/ChenyangSi/FreeU/graphs/contributors">
+  <img alt="contributors" src="https://contrib.rocks/image?repo=ChenyangSi/FreeU"/>
+</a>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ChenyangSi/FreeU&type=Date)](https://star-history.com/#ChenyangSi/FreeU&Date)
+
+<p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
+    <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
+        ↑ Back to Top ↑
+    </a>
+</p>
