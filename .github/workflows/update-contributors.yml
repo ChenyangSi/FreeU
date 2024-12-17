@@ -1,0 +1,36 @@
+name: Update Contributors
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run the contributor fetch script
+        run: python contributing.py  # Make sure your script is in the repo
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CONTRIBUTING.md
+          git commit -m "Update contributors list"
+          git push
