@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<h1>FreeU: Free Lunch in Diffusion U-Net ()</h1>
+<h1>FreeU: Free Lunch in Diffusion U-Net</h1>
 
 <div>
     <a href="https://chenyangsi.github.io/" target="_blank">Chenyang Si</a><sup></sup> | 
